@@ -25,10 +25,10 @@ public class Sucursal {
 	@Column(name="nombre")
 	private String nSucursal;
 	
-	@Column(name="nomGerente")
+	@Column(name="nom_gerente")
 	private String nGerente;
 	
-	@Column(name="nMesas")
+	@Column(name="n_mesas")
 	private Integer nMesas;
 	
 	@Column(name="ubicacion")
