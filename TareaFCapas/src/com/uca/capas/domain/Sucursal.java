@@ -11,6 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(schema="public", name="sucursal")
@@ -22,21 +26,28 @@ public class Sucursal {
 	@Column(name="id_sucursal")
 	private Integer cSucursal;
 	
+	@NotEmpty(message= "Favor ingrese nombre sucursal.")
 	@Column(name="nombre")
 	private String nSucursal;
 	
+	@NotEmpty(message= "Favor ingrese nombre gerente.")
 	@Column(name="nom_gerente")
 	private String nGerente;
-	
+
+	@Min(value = 1L, message = "El número debe ser positivo y mayor a 1.")
+	@NotNull(message= "Favor ingrese cantidad de mesas.")
 	@Column(name="n_mesas")
 	private Integer nMesas;
 	
+	@NotEmpty(message= "Favor ingrese ubicación.")
 	@Column(name="ubicacion")
 	private String uSucursal;
 	
+	@NotEmpty(message= "Favor ingrese horario apertura.")
 	@Column(name="horario_apertura")
 	private String hApertura;
 	
+	@NotEmpty(message= "Favor ingrese horario cierre.")
 	@Column(name="horario_cierre")
 	private String hCierre;
 	

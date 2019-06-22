@@ -2,6 +2,8 @@ package com.uca.capas.dto;
 
 public class EmpleadosDTO {
 	
+	private String cEmpleado;
+	
 	private String nombre;
 	
 	private String edad;
@@ -47,7 +49,17 @@ public class EmpleadosDTO {
 		else {
 			return estado == "true" ?"Activo":"Inactivo";
 		}
-	}	
+	}
+
+	public String getcEmpleado() {
+		return cEmpleado;
+	}
+
+	public void setcEmpleado(String cEmpleado) {
+		this.cEmpleado = cEmpleado;
+	}
+	
+	
 	
 	
 }

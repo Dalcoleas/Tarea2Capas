@@ -7,9 +7,15 @@ import com.uca.capas.dto.EmpleadosDTO;
 
 
 public interface EmpleadoService {
-
-	public List<Empleado> findVehiculosCliente();
+	public List<Empleado> findEmpleadosSucursal();
 	
-	public List<EmpleadosDTO> findVehCliente(Integer sucursal);
+	public List<EmpleadosDTO> findSucEmpleado(Integer sucursal);
 	
+	public void delete(Empleado id);
+	
+	public void deleteAll();
+	
+	public Empleado save (Empleado e);	
+	
+	public Empleado findOne(Integer e);
 }

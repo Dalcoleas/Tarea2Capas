@@ -1,5 +1,6 @@
 package com.uca.capas.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(schema="public", name="empleado")
@@ -21,14 +26,17 @@ public class Empleado {
 	@Column(name="id_empleado")
 	private Integer cEmpleado;
 	
+	@NotEmpty(message= "Favor ingrese nombre empleado.")
 	@Column(name="nombre")
 	private String nEmpleado;
 
 	@Column(name="genero")
 	private String gEmpleado;
 	
+	@Min(value = 1L, message = "El número debe ser positivo y mayor a 1.")
+	@NotNull(message= "Favor ingrese edad empleado.")
 	@Column(name="edad")
-	private String eEmpleado;
+	private Integer eEmpleado;
 	
 	@Column(name="estado")
 	private Boolean eActivo;
@@ -37,7 +45,7 @@ public class Empleado {
 	@JoinColumn(name="id_sucursal")
 	private Sucursal sucursal;
 	
-	public Empleado(Integer cEmpleado, String nEmpleado, String gEmpleado, String eEmpleado, Boolean eActivo,
+	public Empleado(Integer cEmpleado, String nEmpleado, String gEmpleado, Integer eEmpleado, Boolean eActivo,
 			Sucursal sucursal) {
 		super();
 		this.cEmpleado = cEmpleado;
@@ -76,11 +84,11 @@ public class Empleado {
 		this.gEmpleado = gEmpleado;
 	}
 
-	public String geteEmpleado() {
+	public Integer geteEmpleado() {
 		return eEmpleado;
 	}
 
-	public void seteEmpleado(String eEmpleado) {
+	public void seteEmpleado(Integer eEmpleado) {
 		this.eEmpleado = eEmpleado;
 	}
 

@@ -6,38 +6,64 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Sucursales</title>
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <style>
-.content {
+body {
 	margin: auto;
-	text-align: center
+	padding: 10px;
+	text-align: center;
+	background: #4CAF50;
+	font-weight: bold;
+	font-family: 'Indie Flower', cursive;
+	font-size: 20px;
 }
 
-th, td {
-	padding: 10px
+.table th, .table td{
+	padding: 10px;
+	border: 5px solid black;
+	
 }
+
+th{
+	color : white;
+}
+
 
 button{
 	margin: 5px
 }
 
-
 </style>
 <body>
+	<c:set var="count" value="0" scope="page" />
 	<div class="content">
 		<h2>Todas las Sucursales</h2>
-			<table align="center">
+			<table class="table table-bordered" align="center">
+			<thead>
 				<tr>
+					<th scope="col">#</th>
 					<th>Sucursal</th>
-					<th>Acciones</th>
+					<th>Perfil</th>
+					<th>Editar</th>
+					<th>Eliminar</th>
 				</tr>
+			</thead>
 				<c:forEach items="${sucursales}" var="s">
+				<c:set var="count" value="${count + 1}"/>
+				<tbody>
 					<tr>
+						<th scope="row">${count}</th>
 						<td>${s.nSucursal}</td>
-						<td><button type="button" value="Ver" onclick="location.href='${pageContext.request.contextPath}/perfilSucursal?cSucursal=${s.cSucursal}'">Perfil</button><button type="button">Eliminar</button></td>
+						<td><button type="button" class="btn btn-dark" onclick="location.href='${pageContext.request.contextPath}/perfilSucursal?cSucursal=${s.cSucursal}'">Perfil</button></td>
+												<td><button type="button" class="btn btn-dark" onclick="location.href='${pageContext.request.contextPath}/editarSucursal?cSucursal=${s.cSucursal}'">Editar</button></td>
+						<td><button type="button" class="btn btn-dark" onclick="location.href='${pageContext.request.contextPath}/eliminarSucursal?cSucursal=${s.cSucursal}'">Eliminar</button></td>
 					</tr>
+				</tbody>
 				</c:forEach>
 			</table>
 	</div>
+	<button type="button"  class="btn btn-dark" onclick="location.href='${pageContext.request.contextPath}/addSucursal'">Agregar Sucursal</button>
 </body>
 </html>
