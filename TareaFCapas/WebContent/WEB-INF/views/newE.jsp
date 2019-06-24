@@ -9,6 +9,23 @@
 <title>Empleado</title>
 </head>
 <link rel="stylesheet" type="text/css" href="resources/css/style_new_suc.css">
+<style>
+h2{
+text-align: center;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+</style>
 <body>
 
 	
@@ -43,7 +60,12 @@
      <c:if test = "${resultado eq 0}">
 		<h2>Favor regresar a pantalla anterior para agregar nuevo empleado.</h2>
 	</c:if>
-  </form:form> 
+
+	<c:if test = "${resultado eq 1}">
+		<h2>Empleado Guardado/Editado Con Éxito</h2>
+		<button  class="button" type="button" onclick="location.href='${pageContext.request.contextPath}/sucursales'">Regresar a Sucursales</button>
+	</c:if>
+</form:form> 
 </div>
 </body>
 </html>

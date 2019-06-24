@@ -56,6 +56,7 @@ public class EmpleadoController {
 		else {
 			empleadoService.save(e);
 			emp = empleadoService.findSucEmpleado(idSuc);
+			mav.addObject("resultado",1);
 			mav.addObject("sucursal", s);
 			mav.addObject("empleados", emp);
 			mav.setViewName("newE");

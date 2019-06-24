@@ -5,7 +5,7 @@
 body{
 	margin: 0;
 	padding: 0;
-	background: #76e482;
+	background: #4CAF50;
 	color: #fff;
 	font-family: Arial;
 	font-size: 12px;
@@ -53,7 +53,7 @@ body{
 }
 
 .header div span{
-	color: #5379fa !important;
+	color: #000080!important;
 }
 
 .login{

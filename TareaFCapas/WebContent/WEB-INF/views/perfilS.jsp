@@ -7,7 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Perfil Sucursal</title>
-<link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <style>
@@ -30,7 +30,7 @@ body {
 	text-align: center;
 	background: #4CAF50;
 	font-weight: bold;
-	font-family: 'Indie Flower', cursive;
+	font-family: 'Exo', sans-serif;
 	font-size: 20px;
 }
 
